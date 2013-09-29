@@ -37,4 +37,13 @@ class Camera
 
 		return cast(float) rect.height / cast(float) rect.width;
 	}
+
+	void apply(MFVector offset) {
+		MFView_ConfigureProjection(fov, nearPlane, farPlane);
+		MFView_SetAspectRatio(XAspect);
+		MFView_SetProjection();
+		MFMatrix mat = transform;
+		mat.t += offset;
+		MFView_SetCameraMatrix(mat);
+	}
 }

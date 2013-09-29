@@ -1,2 +1,67 @@
-[Project]
-VersionControlSupport=kdevgit
+[CustomBuildSystem]
+CurrentConfiguration=BuildConfig0
+
+[CustomBuildSystem][BuildConfig0]
+BuildDir=file:///home/danni/Projects/sandpit.git
+Title=debug
+
+[CustomBuildSystem][BuildConfig0][ProjectPath0]
+Defines=\x00\x00\x00\x00
+Includes=\x00\x00\x00\x00
+Path=.
+
+[CustomBuildSystem][BuildConfig0][ToolBuild]
+Arguments=-debug -g -I/usr/local/include/d2  -I./src -L-L/usr/local/lib/ -L-lFuji-debug --chatty --build-only src/main.d\s
+Enabled=true
+Environment=
+Executable=rdmd
+Type=0
+
+[CustomBuildSystem][BuildConfig0][ToolClean]
+Arguments=-debug -g -I/usr/local/include/d2  -I./src -L-L/usr/local/lib/ -L-lFuji-debug --force --build-only src/main.d\s
+Enabled=true
+Environment=
+Executable=rdmd
+Type=3
+
+[CustomBuildSystem][BuildConfig0][ToolConfigure]
+Arguments=
+Enabled=false
+Environment=
+Executable=
+Type=1
+
+[CustomBuildSystem][BuildConfig0][ToolInstall]
+Arguments=
+Enabled=false
+Environment=
+Executable=
+Type=2
+
+[CustomBuildSystem][BuildConfig0][ToolPrune]
+Arguments=
+Enabled=false
+Environment=
+Executable=
+Type=4
+
+[Launch]
+Launch Configurations=Launch Configuration 0
+
+[Launch][Launch Configuration 0]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=New Application Launcher (3)
+Type=Native Application
+
+[Launch][Launch Configuration 0][Data]
+Arguments=
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
+Dependency Action=Nothing
+EnvironmentGroup=default
+Executable=file:///home/danni/Projects/sandpit.git/src/main
+External Terminal=konsole --noclose --workdir %workdir -e %exe
+Project Target=
+Use External Terminal=false
+Working Directory=file:///home/danni/Projects/sandpit.git
+isExecutable=true
