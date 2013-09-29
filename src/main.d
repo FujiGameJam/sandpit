@@ -47,9 +47,6 @@ else
 			Runtime.initialize(&exceptionHandler);
 
 			MFInitParams initParams;
-			initParams.argc = cast(int)argv.length;
-			initParams.argv = argv.ptr;
-
 			result = GameMain(initParams);
 
 			Runtime.terminate(&exceptionHandler);
