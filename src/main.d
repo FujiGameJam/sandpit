@@ -12,41 +12,50 @@ import game;
 
 version (Windows)
 {
-  extern (Windows) int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
-  {
+	extern (Windows)
+	int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+	{
 		int result;
 
-		void exceptionHandler(Throwable e) {throw e;}
+		void exceptionHandler(Throwable e) { throw e; }
 
 		try
 		{
 			Runtime.initialize(&exceptionHandler);
+
 			MFInitParams initParams;
 			initParams.hInstance = hInstance;
 			initParams.pCommandLine = lpCmdLine;
 
-			result = GaimMain(initParams);
+			result = GameMain(initParams);
+
 			Runtime.terminate(&exceptionHandler);
 		} catch (Throwable o) { result = 0; }
 
 		return result;
-  }
-} else {
-  int main (string[] argv)
-  {
-	int result;
-	void exceptionHandler(Throwable e) {throw e;}
-
-	try
+	}
+}
+else
+{
+	int main(string[] argv)
 	{
-		Runtime.initialize(&exceptionHandler);
-		MFInitParams initParams;
+		int result;
+		void exceptionHandler(Throwable e) { throw e; }
 
-		result = GameMain(initParams);
-		Runtime.terminate(&exceptionHandler);
+		try
+		{
+			Runtime.initialize(&exceptionHandler);
 
-	} catch (Throwable o) { result = 0; }
+			MFInitParams initParams;
+			initParams.argc = cast(int)argv.length;
+			initParams.argv = argv.ptr;
 
-	return result;
-  }
+			result = GameMain(initParams);
+
+			Runtime.terminate(&exceptionHandler);
+
+		} catch (Throwable o) { result = 0; }
+
+		return result;
+	}
 }

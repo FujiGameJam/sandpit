@@ -13,3 +13,10 @@
 *.lai
 *.la
 *.a
+*.suo
+*.exp
+*.ilk
+*.pdb
+*.sdf
+Build/
+ipch/
