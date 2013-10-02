@@ -268,13 +268,13 @@
   <cv2pdbOptions />
   <objfiles />
   <linkswitches />
-  <libfiles>ole32.lib kernel32.lib user32.lib comctl32.lib comdlg32.lib gdi32.lib oleaut32.lib</libfiles>
+  <libfiles>mad.lib ole32.lib kernel32.lib user32.lib comctl32.lib comdlg32.lib gdi32.lib oleaut32.lib</libfiles>
   <libpaths />
   <deffile />
   <resfile />
   <exefile>$(OutDir)\$(ProjectName).exe</exefile>
   <useStdLibPath>1</useStdLibPath>
-  <additionalOptions>-L/LIBPATH:../Fuji/dist/lib/x64 -L/LIBPATH:../Fuji/dist/lib/x64/vorbis -L/LIBPATH:../Fuji/dist/lib/x64/assimp -L/LIBPATH:../Fuji/dist/lib/x64/lglcd</additionalOptions>
+  <additionalOptions>-L/LIBPATH:../Fuji/dist/lib/x64</additionalOptions>
   <preBuildCommand />
   <postBuildCommand />
   <filesToClean>*.obj;*.cmd;*.build;*.json;*.dep</filesToClean>
@@ -361,7 +361,7 @@
   <cv2pdbOptions />
   <objfiles />
   <linkswitches />
-  <libfiles>ole32.lib kernel32.lib user32.lib comctl32.lib comdlg32.lib</libfiles>
+  <libfiles>mad.lib ole32.lib kernel32.lib user32.lib comctl32.lib comdlg32.lib gdi32.lib oleaut32.lib</libfiles>
   <libpaths />
   <deffile />
   <resfile />
